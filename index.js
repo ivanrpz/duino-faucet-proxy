@@ -2,7 +2,6 @@ var express = require('express');
 require('dotenv').config();
 var app = express();
 const { exec } = require("child_process");
-const port = 3000
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', function(req, res) {
@@ -15,6 +14,6 @@ app.get('/ping', function(req, res) {
     res.send('pong');
 })
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+app.listen(process.env.PORT, () => {
+    console.log(`Example app listening on port ${process.env.PORT}`)
 })
